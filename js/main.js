@@ -1026,7 +1026,7 @@ function initLangSwitcher() {
 
 /* ─── PRELOADER ─── */
 function initPreloader() {
-    const preloader = document.querySelector('.preloader');
+    const preloader = document.getElementById('preloader');
     if (!preloader) return;
     window.addEventListener('load', () => {
         setTimeout(() => {
@@ -1048,7 +1048,7 @@ function initCursor() {
     function animateRing() { cx += (mx - cx) * .15; cy += (my - cy) * .15; ring.style.left = cx + 'px'; ring.style.top = cy + 'px'; requestAnimationFrame(animateRing); }
     animateRing();
 
-    document.querySelectorAll('a, button, [role="button"], .gallery-item').forEach(el => {
+    document.querySelectorAll('a, button, [role="button"], .gal-item').forEach(el => {
         el.addEventListener('mouseenter', () => { ring.style.width = '52px'; ring.style.height = '52px'; ring.style.opacity = '.3'; });
         el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.opacity = '.5'; });
     });
@@ -1096,7 +1096,7 @@ function initPageTransitions() {
 
 /* ─── REVEAL ON SCROLL ─── */
 function initReveals() {
-    const els = document.querySelectorAll('.reveal-up, .reveal-right, .reveal-scale');
+    const els = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
     if (!els.length) return;
     const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1148,38 +1148,51 @@ function initParticles() {
 
 /* ─── REVIEWS SLIDER ─── */
 function initReviews() {
-    const track = document.querySelector('.reviews-track');
-    const nextBtn = document.querySelector('.review-next');
-    const prevBtn = document.querySelector('.review-prev');
+    const track = document.getElementById('reviewsTrack') || document.querySelector('.reviews-track');
+    const nextBtn = document.getElementById('revNext');
+    const prevBtn = document.getElementById('revPrev');
     if (!track) return;
 
     let idx = 0;
-    const cards = track.querySelectorAll('.review-card');
+    const cards = track.querySelectorAll('.rev-card');
     const total = cards.length;
     if (!total) return;
 
-    function update() {
-        track.style.transform = `translateX(-${idx * 100}%)`;
+    // Calculate how many cards visible at once
+    function getVisibleCount() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
     }
 
-    if (nextBtn) nextBtn.addEventListener('click', () => { idx = (idx + 1) % total; update(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { idx = (idx - 1 + total) % total; update(); });
+    function update() {
+        const visibleCount = getVisibleCount();
+        const maxIdx = Math.max(0, total - visibleCount);
+        if (idx > maxIdx) idx = 0;
+        const cardWidth = cards[0].offsetWidth + 24; // card width + gap
+        track.style.transform = `translateX(-${idx * cardWidth}px)`;
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => { idx++; update(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { idx = Math.max(0, idx - 1); update(); });
 
     // Auto slide
-    let auto = setInterval(() => { idx = (idx + 1) % total; update(); }, 6000);
+    let auto = setInterval(() => { idx++; update(); }, 6000);
     track.addEventListener('mouseenter', () => clearInterval(auto));
-    track.addEventListener('mouseleave', () => { auto = setInterval(() => { idx = (idx + 1) % total; update(); }, 6000); });
+    track.addEventListener('mouseleave', () => { auto = setInterval(() => { idx++; update(); }, 6000); });
+    window.addEventListener('resize', update);
 }
 
 /* ─── GALLERY ─── */
 function initGallery() {
     const filters = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.gallery-item');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
-    const lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
-    const lightboxPrev = lightbox ? lightbox.querySelector('.lightbox-prev') : null;
-    const lightboxNext = lightbox ? lightbox.querySelector('.lightbox-next') : null;
+    const items = document.querySelectorAll('.gal-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lbImg');
+    const lightboxClose = document.getElementById('lbClose');
+    const lightboxPrev = document.getElementById('lbPrev');
+    const lightboxNext = document.getElementById('lbNext');
+    const lightboxCaption = document.getElementById('lbCaption');
 
     // Filters
     filters.forEach(btn => {
@@ -1201,7 +1214,9 @@ function initGallery() {
     function openLightbox(idx) {
         visibleItems = Array.from(items).filter(i => i.style.display !== 'none');
         currentLightboxIdx = idx;
-        lightboxImg.src = visibleItems[idx].querySelector('img').src;
+        const imgEl = visibleItems[idx].querySelector('img');
+        lightboxImg.src = imgEl.src;
+        if (lightboxCaption) lightboxCaption.textContent = imgEl.alt || '';
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -1219,14 +1234,18 @@ function initGallery() {
     });
 
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    if (lightbox) lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
     if (lightboxPrev) lightboxPrev.addEventListener('click', () => {
         currentLightboxIdx = (currentLightboxIdx - 1 + visibleItems.length) % visibleItems.length;
-        lightboxImg.src = visibleItems[currentLightboxIdx].querySelector('img').src;
+        const imgEl = visibleItems[currentLightboxIdx].querySelector('img');
+        lightboxImg.src = imgEl.src;
+        if (lightboxCaption) lightboxCaption.textContent = imgEl.alt || '';
     });
     if (lightboxNext) lightboxNext.addEventListener('click', () => {
         currentLightboxIdx = (currentLightboxIdx + 1) % visibleItems.length;
-        lightboxImg.src = visibleItems[currentLightboxIdx].querySelector('img').src;
+        const imgEl = visibleItems[currentLightboxIdx].querySelector('img');
+        lightboxImg.src = imgEl.src;
+        if (lightboxCaption) lightboxCaption.textContent = imgEl.alt || '';
     });
 
     document.addEventListener('keydown', e => {
@@ -1270,7 +1289,7 @@ function initBackToTop() {
 
 /* ─── TILT EFFECT ─── */
 function initTilt() {
-    document.querySelectorAll('.room-img, .about-img').forEach(el => {
+    document.querySelectorAll('.room-detail-img, .about-img').forEach(el => {
         el.addEventListener('mousemove', e => {
             const rect = el.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - .5;
