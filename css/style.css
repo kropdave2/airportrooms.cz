@@ -343,8 +343,8 @@ button, input, select, textarea { font: inherit; border: none; outline: none; ba
     animation: planeGlow 3s ease-in-out infinite alternate;
 }
 .plane-body svg {
-    width: 52px; height: 52px; fill: white; transform: rotate(-45deg);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,.1));
+    width: 90px; height: 90px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,.15));
 }
 @keyframes planeBob {
     0%, 100% { transform: translateY(0) rotate(-2deg); }
