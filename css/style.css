@@ -244,6 +244,61 @@ button, input, select, textarea { font: inherit; border: none; outline: none; ba
 .stat-lbl { font-size: .85rem; color: var(--text-light); }
 .stat-div { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
 
+/* ─── AIRPLANE ANIMATION ─── */
+.airplane-container {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden;
+}
+.airplane {
+    position: absolute; top: 18%; left: -120px;
+    animation: flyAcross 18s cubic-bezier(.25,.1,.25,1) infinite;
+    opacity: 0; filter: drop-shadow(0 2px 8px rgba(26,86,219,.18));
+}
+.airplane svg {
+    width: 48px; height: 48px; fill: var(--primary); opacity: .18;
+}
+.airplane-trail {
+    position: absolute; top: calc(18% + 22px); left: 0; width: 100%; height: 2px;
+    pointer-events: none; overflow: hidden;
+}
+.airplane-trail::after {
+    content: ''; position: absolute; top: 0; left: -100%;
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(26,86,219,.12), transparent);
+    animation: trailMove 18s cubic-bezier(.25,.1,.25,1) infinite;
+}
+@keyframes flyAcross {
+    0% { left: -120px; top: 22%; opacity: 0; transform: rotate(-3deg) scale(.9); }
+    5% { opacity: .22; }
+    25% { top: 14%; transform: rotate(-5deg) scale(1); }
+    50% { top: 18%; opacity: .18; transform: rotate(-2deg) scale(1); }
+    75% { top: 12%; transform: rotate(-6deg) scale(.95); }
+    90% { opacity: .15; }
+    100% { left: calc(100% + 120px); top: 16%; opacity: 0; transform: rotate(-4deg) scale(.9); }
+}
+@keyframes trailMove {
+    0% { left: -200px; opacity: 0; }
+    5% { opacity: 1; }
+    90% { opacity: .5; }
+    100% { left: calc(100% + 200px); opacity: 0; }
+}
+.airplane-2 {
+    position: absolute; top: 55%; right: -80px;
+    animation: flyAcross2 24s 6s cubic-bezier(.25,.1,.25,1) infinite;
+    opacity: 0; filter: drop-shadow(0 2px 6px rgba(26,86,219,.12));
+}
+.airplane-2 svg {
+    width: 28px; height: 28px; fill: var(--primary); opacity: .10;
+    transform: scaleX(-1);
+}
+@keyframes flyAcross2 {
+    0% { right: -80px; top: 58%; opacity: 0; transform: rotate(2deg) scale(.8); }
+    8% { opacity: .12; }
+    30% { top: 52%; }
+    60% { top: 56%; opacity: .10; }
+    85% { opacity: .08; }
+    100% { right: calc(100% + 80px); top: 50%; opacity: 0; transform: rotate(4deg) scale(.8); }
+}
+
 /* ═══════════════════════════════════════════
    PAGE HEADER (subpages)
    ═══════════════════════════════════════════ */
