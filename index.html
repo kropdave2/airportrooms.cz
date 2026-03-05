@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Rooms | Ubytování u letiště Praha</title>
+    <meta name="description" content="Airport Rooms – moderní penzion v Praze 6-Liboc. Komfortní ubytování blízko letiště Václava Havla s bezplatným Wi-Fi, sdíleným lounge a kuchyní.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2L6 14h4v14h12V14h4L16 2z' fill='%231a56db'/></svg>">
+</head>
+<body data-page="home">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <svg class="preloader-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4L4 20h6v20h28V20h6L24 4z" stroke="#fff" stroke-width="2" fill="none"/>
+                    <rect x="18" y="28" width="12" height="12" rx="1" stroke="#fff" stroke-width="1.5" fill="none"/>
+                    <path d="M40 8l-6 2 2-6 4 4z" fill="#fff" opacity=".6"/>
+                    <path d="M44 12l-4 1.5 1.5-4L44 12z" fill="#fff" opacity=".3"/>
+                </svg>
+                <span class="preloader-text">Airport Rooms</span>
+            </div>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- CURSOR -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- PAGE TRANSITION -->
+    <div class="page-transition" id="pageTransition">
+        <span class="transition-label">Airport Rooms</span>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/>
+                    <rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/>
+                </svg>
+                <span class="logo-text">Airport<span class="logo-accent">Rooms</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Domů</a></li>
+                <li><a href="rooms.html" class="nav-link" data-i18n="nav.rooms">Pokoje</a></li>
+                <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn" id="langBtn" aria-label="Language">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span id="currentLang">CZ</span>
+                        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="cs">Čeština</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="de">Deutsch</button>
+                        <button class="lang-option" data-lang="ru">Русский</button>
+                        <button class="lang-option" data-lang="it">Italiano</button>
+                        <button class="lang-option" data-lang="pl">Polski</button>
+                    </div>
+                </div>
+                <a href="rooms.html" class="nav-cta" data-i18n="nav.book">Rezervovat</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-particles" id="heroParticles"></div>
+            <div class="hero-gradient-bottom"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span data-i18n="hero.badge">Hodnocení 4,8 / 5 na Google -- 33 recenzí</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="reveal-up" style="--delay:.1s" data-i18n="hero.title1">Váš domov</span>
+                <span class="reveal-up hero-accent" style="--delay:.2s" data-i18n="hero.title2">u letiště Praha</span>
+            </h1>
+            <p class="hero-subtitle reveal-up" style="--delay:.3s" data-i18n="hero.subtitle">
+                Komfortní ubytování v klidné čtvrti Praha 6 – Liboc, pouhých 10 minut od Letiště Václava Havla. Moderní pokoje, bezplatné Wi-Fi a domácí atmosféra.
+            </p>
+            <div class="hero-btns reveal-up" style="--delay:.4s">
+                <a href="rooms.html" class="btn btn-primary btn-glow">
+                    <span data-i18n="hero.cta1">Prohlédnout pokoje</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="hero.cta2">Kontaktovat nás</a>
+            </div>
+            <div class="hero-stats reveal-up" style="--delay:.5s">
+                <div class="stat"><span class="stat-num" data-count="33">0</span><span class="stat-lbl" data-i18n="hero.stat1">recenzí</span></div>
+                <div class="stat-div"></div>
+                <div class="stat"><span class="stat-num" data-count="4.8" data-dec="1">0</span><span class="stat-lbl" data-i18n="hero.stat2">hodnocení</span></div>
+                <div class="stat-div"></div>
+                <div class="stat"><span class="stat-num" data-count="10">0</span><span class="stat-lbl" data-i18n="hero.stat3">min k letišti</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images reveal-left">
+                    <div class="about-img about-img-1">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=800&fit=crop&q=80" alt="Airport Rooms">
+                    </div>
+                    <div class="about-img about-img-2">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&h=400&fit=crop&q=80" alt="Airport Rooms">
+                    </div>
+                    <div class="about-deco-circle"></div>
+                </div>
+                <div class="about-content">
+                    <span class="tag reveal-up" data-i18n="about.tag">O nás</span>
+                    <h2 class="title-lg reveal-up"><span data-i18n="about.title1">Penzion s </span><span class="gradient-text" data-i18n="about.title2">domácí atmosférou</span><span data-i18n="about.title3"> v Praze 6</span></h2>
+                    <p class="text-body reveal-up" data-i18n="about.p1">Airport Rooms je útulný penzion v klidné rezidenční čtvrti Praha 6 – Liboc, zasazený do zelené oblasti s parky Šárka-Lysolaje a Divoká Šárka. Nabízíme komfortní ubytování s bezplatným Wi-Fi, sdíleným lounge prostorem a plně vybavenou kuchyní.</p>
+                    <p class="text-body reveal-up" data-i18n="about.p2">Díky naší strategické poloze blízko letiště Václava Havla jsme ideální volbou pro cestovatele. Ať přijíždíte nebo odjíždíte – u nás se vždy budete cítit jako doma.</p>
+                    <div class="about-features reveal-up">
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M2 4v16h20V4H2zm0 8h20M7 12v8m5-8v8m5-8v8"/></svg></div>
+                            <div><h4 data-i18n="about.feat1.title">Moderní pokoje</h4><p data-i18n="about.feat1.desc">Čisté a pohodlné s vlastním příslušenstvím</p></div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></div>
+                            <div><h4 data-i18n="about.feat2.title">Bezplatné Wi-Fi</h4><p data-i18n="about.feat2.desc">Vysokorychlostní internet v celém objektu</p></div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M3 9h18v12H3V9zM3 9a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4M9 21v-6h6v6"/></svg></div>
+                            <div><h4 data-i18n="about.feat3.title">Sdílená kuchyň</h4><p data-i18n="about.feat3.desc">Plně vybavená kuchyně pro hosty</p></div>
+                        </div>
+                    </div>
+                    <a href="rooms.html" class="btn btn-primary reveal-up" style="--delay:.1s" data-i18n="about.cta">Zobrazit pokoje</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span data-i18n="marquee.1">Blízko letiště</span><span class="marquee-dot"></span>
+            <span data-i18n="marquee.2">4,8 hodnocení</span><span class="marquee-dot"></span>
+            <span data-i18n="marquee.3">Domácí atmosféra</span><span class="marquee-dot"></span>
+            <span data-i18n="marquee.4">Bezplatné Wi-Fi</span><span class="marquee-dot"></span>
+            <span data-i18n="marquee.5">Klidná lokalita</span><span class="marquee-dot"></span>
+            <span data-i18n="marquee.6">Skvělé ceny</span><span class="marquee-dot"></span>
+            <span>Blízko letiště</span><span class="marquee-dot"></span>
+            <span>4,8 hodnocení</span><span class="marquee-dot"></span>
+            <span>Domácí atmosféra</span><span class="marquee-dot"></span>
+            <span>Bezplatné Wi-Fi</span><span class="marquee-dot"></span>
+            <span>Klidná lokalita</span><span class="marquee-dot"></span>
+            <span>Skvělé ceny</span><span class="marquee-dot"></span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="tag reveal-up" data-i18n="services.tag">Služby</span>
+                <h2 class="title-lg reveal-up"><span data-i18n="services.title1">Co vám </span><span class="gradient-text" data-i18n="services.title2">nabízíme</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="svc-card reveal-up" style="--delay:.05s">
+                    <div class="svc-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1l6.2 3.7-3.5 3.5-2.4-.8c-.3-.1-.7 0-.8.3l-.2.3c-.2.3-.1.7.2.9l3.1 2.1 2.1 3.1c.2.3.6.4.9.2l.3-.2c.3-.2.4-.5.3-.8l-.8-2.4 3.5-3.5 3.7 6.2c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></div>
+                    <h3 data-i18n="services.s1.title">Blízko letiště</h3>
+                    <p data-i18n="services.s1.desc">Letiště Václava Havla je pouhých 10 minut autem. Ideální pro rané lety i pozdní přílety.</p>
+                </div>
+                <div class="svc-card reveal-up" style="--delay:.1s">
+                    <div class="svc-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0 1 14.08 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01M1.34 8.98A16.07 16.07 0 0 1 12 5a16.07 16.07 0 0 1 10.66 3.98"/></svg></div>
+                    <h3 data-i18n="services.s2.title">Bezplatné Wi-Fi</h3>
+                    <p data-i18n="services.s2.desc">Vysokorychlostní internet v celém objektu pro práci i zábavu.</p>
+                </div>
+                <div class="svc-card reveal-up" style="--delay:.15s">
+                    <div class="svc-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 12h20M8 12v8M16 12v8"/></svg></div>
+                    <h3 data-i18n="services.s3.title">Sdílený lounge</h3>
+                    <p data-i18n="services.s3.desc">Útulný společenský prostor pro relaxaci a setkávání s ostatními hosty.</p>
+                </div>
+                <div class="svc-card reveal-up" style="--delay:.2s">
+                    <div class="svc-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9h18v12H3V9zM3 9a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4M9 21v-6h6v6"/></svg></div>
+                    <h3 data-i18n="services.s4.title">Vybavená kuchyně</h3>
+                    <p data-i18n="services.s4.desc">Plně vybavená sdílená kuchyně s vařičem, lednicí, mikrovlnkou a nádobím.</p>
+                </div>
+                <div class="svc-card reveal-up" style="--delay:.25s">
+                    <div class="svc-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><circle cx="15" cy="15" r="2"/></svg></div>
+                    <h3 data-i18n="services.s5.title">Parkování</h3>
+                    <p data-i18n="services.s5.desc">Možnost bezplatného parkování přímo u penzionu.</p>
+                </div>
+                <div class="svc-card reveal-up" style="--delay:.3s">
+                    <div class="svc-icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z"/><path d="M8 10s1.5 2 4 2 4-2 4-2"/></svg></div>
+                    <h3 data-i18n="services.s6.title">Klidná lokalita</h3>
+                    <p data-i18n="services.s6.desc">Zelená čtvrť s parky Divoká Šárka a Šárka-Lysolaje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews" id="reviews">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="tag reveal-up" data-i18n="reviews.tag">Recenze</span>
+                <h2 class="title-lg reveal-up"><span data-i18n="reviews.title1">Co říkají naši </span><span class="gradient-text" data-i18n="reviews.title2">hosté</span></h2>
+                <div class="reviews-score reveal-up">
+                    <div class="score-big">4,8</div>
+                    <div class="score-stars">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <div class="score-sub" data-i18n="reviews.sub">33 recenzí na Googlu</div>
+                </div>
+            </div>
+            <div class="reviews-slider reveal-up">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="rev-card">
+                        <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <p>"Skvělé ubytování blízko letiště! Pokoje jsou čisté, tiché a majitel je velmi milý. Ideální na přespání před ranním letem."</p>
+                        <div class="rev-author"><div class="rev-avatar">M</div><div><strong>Martin K.</strong><span data-i18n="reviews.r1.time">před 2 měsíci</span></div></div>
+                    </div>
+                    <div class="rev-card">
+                        <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <p>"Výborný poměr cena/výkon. Kuchyňka je super bonus. Okolí je klidné a na letiště to trvá jen chvilku."</p>
+                        <div class="rev-author"><div class="rev-avatar">L</div><div><strong>Lucie S.</strong><span data-i18n="reviews.r2.time">před 1 měsícem</span></div></div>
+                    </div>
+                    <div class="rev-card">
+                        <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <p>"Příjemné a útulné místo. Wi-Fi funguje skvěle, postel je pohodlná. Skvělá alternativa k drahým hotelům u letiště."</p>
+                        <div class="rev-author"><div class="rev-avatar">P</div><div><strong>Petr N.</strong><span data-i18n="reviews.r3.time">před 3 týdny</span></div></div>
+                    </div>
+                    <div class="rev-card">
+                        <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <p>"Dobré ubytování pro transit. Všechno čisté, majitel komunikativní. Parkování přímo u domu -- velké plus."</p>
+                        <div class="rev-author"><div class="rev-avatar">J</div><div><strong>Jana V.</strong><span data-i18n="reviews.r4.time">před 1 měsícem</span></div></div>
+                    </div>
+                    <div class="rev-card">
+                        <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <p>"Super lokace, profesionální přístup. Pokoj čistý, dobře vybavený. Vrátíme se při dalším letu z Prahy!"</p>
+                        <div class="rev-author"><div class="rev-avatar">T</div><div><strong>Tomáš R.</strong><span data-i18n="reviews.r5.time">před 2 týdny</span></div></div>
+                    </div>
+                </div>
+                <div class="rev-nav">
+                    <button class="rev-btn" id="revPrev" aria-label="Předchozí"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+                    <button class="rev-btn" id="revNext" aria-label="Další"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card reveal-up">
+                <div class="cta-content">
+                    <h2 class="title-lg"><span data-i18n="cta.title1">Připraveni na </span><span class="gradient-text" data-i18n="cta.title2">pohodlný pobyt?</span></h2>
+                    <p data-i18n="cta.desc">Prohlédněte si naše pokoje nebo nás rovnou kontaktujte.</p>
+                    <div class="cta-btns">
+                        <a href="rooms.html" class="btn btn-primary btn-glow" data-i18n="cta.cta1">Prohlédnout pokoje</a>
+                        <a href="contact.html" class="btn btn-outline-dark" data-i18n="cta.cta2">Kontaktovat nás</a>
+                    </div>
+                </div>
+                <div class="cta-price-bubble">
+                    <span data-i18n="cta.from">od</span>
+                    <strong>1 290 Kč</strong>
+                    <span data-i18n="cta.pernight">za noc</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg>
+                        <span class="logo-text">Airport<span class="logo-accent">Rooms</span></span>
+                    </a>
+                    <p data-i18n="footer.desc">Komfortní ubytování v Praze 6, blízko letiště Václava Havla. Váš domov daleko od domova.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.pages">Stránky</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav.home">Domů</a></li>
+                        <li><a href="rooms.html" data-i18n="nav.rooms">Pokoje</a></li>
+                        <li><a href="gallery.html" data-i18n="nav.gallery">Galerie</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="nav.contact">Kontakt</h4>
+                    <p>Evropská 503/221<br>161 00 Praha 6 – Liboc</p>
+                    <p><a href="tel:+420777024000">+420 777 024 000</a></p>
+                    <p><a href="mailto:info@airportrooms.cz">info@airportrooms.cz</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Airport Rooms. <span data-i18n="footer.copy">Všechna práva vyhrazena.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Nahoru"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+    <script src="js/main.js"></script>
+</body>
+</html>

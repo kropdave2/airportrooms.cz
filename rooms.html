@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokoje | Airport Rooms</title>
+    <meta name="description" content="Prohlédněte si naše komfortní pokoje – jednolůžkový, dvoulůžkový i rodinný apartmán blízko letiště Praha.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2L6 14h4v14h12V14h4L16 2z' fill='%231a56db'/></svg>">
+</head>
+<body data-page="rooms">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-transition" id="pageTransition"><span class="transition-label">Airport Rooms</span></div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg>
+                <span class="logo-text">Airport<span class="logo-accent">Rooms</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Domů</a></li>
+                <li><a href="rooms.html" class="nav-link active" data-i18n="nav.rooms">Pokoje</a></li>
+                <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn" id="langBtn" aria-label="Language">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span id="currentLang">CZ</span>
+                        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="cs">Čeština</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="de">Deutsch</button>
+                        <button class="lang-option" data-lang="ru">Русский</button>
+                        <button class="lang-option" data-lang="it">Italiano</button>
+                        <button class="lang-option" data-lang="pl">Polski</button>
+                    </div>
+                </div>
+                <a href="rooms.html" class="nav-cta" data-i18n="nav.book">Rezervovat</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <span class="tag reveal-up" data-i18n="rooms.tag">Naše pokoje</span>
+            <h1 class="title-xl reveal-up" style="--delay:.1s"><span data-i18n="rooms.title1">Vyberte si svůj </span><span class="gradient-text" data-i18n="rooms.title2">ideální pokoj</span></h1>
+            <p class="text-body-lg reveal-up" style="--delay:.2s" data-i18n="rooms.intro">Nabízíme různé typy pokojů pro jednotlivce, páry i rodiny. Všechny pokoje jsou moderně zařízeny a pravidelně udržovány.</p>
+        </div>
+    </section>
+
+    <section class="section rooms-page">
+        <div class="container">
+            <!-- Room 1 -->
+            <div class="room-detail reveal-up" style="--delay:.1s">
+                <div class="room-detail-img">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&h=500&fit=crop&q=80" alt="Dvoulůžkový pokoj">
+                    <span class="room-badge" data-i18n="rooms.r1.badge">Nejoblíbenější</span>
+                </div>
+                <div class="room-detail-info">
+                    <h2 data-i18n="rooms.r1.name">Dvoulůžkový pokoj</h2>
+                    <p class="room-desc" data-i18n="rooms.r1.desc">Prostorný pokoj s manželskou postelí, vlastní koupelnou a výhledem do zahrady. Perfektní pro páry i dva přátele na cestách.</p>
+                    <ul class="room-perks">
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M2 4v16h20V4H2zm0 8h20"/></svg> <span data-i18n="rooms.r1.p1">Manželská postel (180x200 cm)</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M3 6v14h18V6M3 10h18M12 10v10"/></svg> <span data-i18n="rooms.r1.p2">Vlastní koupelna se sprchovým koutem</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg> <span data-i18n="rooms.r1.p3">Vysokorychlostní Wi-Fi zdarma</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 3v1m0 16v1m-9-9h1m16 0h1m-2.636-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707"/><circle cx="12" cy="12" r="4"/></svg> <span data-i18n="rooms.r1.p4">Klimatizace</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg> <span data-i18n="rooms.r1.p5">Smart TV</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg> <span data-i18n="rooms.r1.p6">Toaletní potřeby zdarma</span></li>
+                    </ul>
+                    <div class="room-detail-footer">
+                        <div class="room-price-big">
+                            <span class="price-label" data-i18n="cta.from">od</span>
+                            <span class="price-val">1 890 Kč</span>
+                            <span class="price-label" data-i18n="rooms.pernight">/ noc</span>
+                        </div>
+                        <a href="https://www.booking.com/hotel/cz/airport-rooms.cs.html" target="_blank" class="btn btn-primary" data-i18n="rooms.bookbtn">Rezervovat na Booking.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="room-detail room-detail-reverse reveal-up" style="--delay:.15s">
+                <div class="room-detail-img">
+                    <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=700&h=500&fit=crop&q=80" alt="Jednolůžkový pokoj">
+                    <span class="room-badge badge-green" data-i18n="rooms.r2.badge">Skvělá cena</span>
+                </div>
+                <div class="room-detail-info">
+                    <h2 data-i18n="rooms.r2.name">Jednolůžkový pokoj</h2>
+                    <p class="room-desc" data-i18n="rooms.r2.desc">Útulný pokoj ideální pro jednotlivce na služební cestě nebo krátký pobyt v Praze. Kompaktní, ale plně vybavený.</p>
+                    <ul class="room-perks">
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M2 4v16h20V4H2zm0 8h20"/></svg> <span data-i18n="rooms.r2.p1">Jednolůžko (120x200 cm)</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M3 6v14h18V6M3 10h18M12 10v10"/></svg> <span data-i18n="rooms.r2.p2">Vlastní koupelna</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg> <span data-i18n="rooms.r1.p3">Vysokorychlostní Wi-Fi zdarma</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg> <span>TV</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.78 7.78 5.5 5.5 0 0 1 7.78-7.78zM15.5 7.5l-3 3"/></svg> <span data-i18n="rooms.r2.p5">Samostatný vchod</span></li>
+                    </ul>
+                    <div class="room-detail-footer">
+                        <div class="room-price-big">
+                            <span class="price-label" data-i18n="cta.from">od</span>
+                            <span class="price-val">1 290 Kč</span>
+                            <span class="price-label" data-i18n="rooms.pernight">/ noc</span>
+                        </div>
+                        <a href="https://www.booking.com/hotel/cz/airport-rooms.cs.html" target="_blank" class="btn btn-primary" data-i18n="rooms.bookbtn">Rezervovat na Booking.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="room-detail reveal-up" style="--delay:.2s">
+                <div class="room-detail-img">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=700&h=500&fit=crop&q=80" alt="Rodinný apartmán">
+                    <span class="room-badge badge-gold" data-i18n="rooms.r3.badge">Premium</span>
+                </div>
+                <div class="room-detail-info">
+                    <h2 data-i18n="rooms.r3.name">Rodinný apartmán</h2>
+                    <p class="room-desc" data-i18n="rooms.r3.desc">Prostorný apartmán se dvěma ložnicemi, obývacím prostorem a plně vybavenou kuchyňkou. Ideální pro rodiny a skupiny.</p>
+                    <ul class="room-perks">
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M2 4v16h20V4H2zm0 8h20"/></svg> <span data-i18n="rooms.r3.p1">2 oddělené ložnice</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M3 9h18v12H3V9zM3 9a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4M9 21v-6h6v6"/></svg> <span data-i18n="rooms.r3.p2">Plně vybavená kuchyňka</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 12h20M8 12v8M16 12v8"/></svg> <span data-i18n="rooms.r3.p3">Obývací prostor</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg> <span>Wi-Fi zdarma</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M3 6v14h18V6M3 10h18M12 10v10"/></svg> <span data-i18n="rooms.r2.p2">Vlastní koupelna</span></li>
+                        <li><svg class="perk-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><circle cx="15" cy="15" r="2"/></svg> <span data-i18n="rooms.r3.p6">Parkování v ceně</span></li>
+                    </ul>
+                    <div class="room-detail-footer">
+                        <div class="room-price-big">
+                            <span class="price-label" data-i18n="cta.from">od</span>
+                            <span class="price-val">2 490 Kč</span>
+                            <span class="price-label" data-i18n="rooms.pernight">/ noc</span>
+                        </div>
+                        <a href="https://www.booking.com/hotel/cz/airport-rooms.cs.html" target="_blank" class="btn btn-primary" data-i18n="rooms.bookbtn">Rezervovat na Booking.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING PARTNERS -->
+    <section class="section booking-section">
+        <div class="container">
+            <div class="booking-card reveal-up">
+                <div class="booking-left">
+                    <span class="tag" data-i18n="rooms.booking.tag">Rezervace</span>
+                    <h2 class="title-lg"><span data-i18n="rooms.booking.title1">Rezervujte přes naše </span><span class="gradient-text" data-i18n="rooms.booking.title2">partnery</span></h2>
+                    <p class="text-body" data-i18n="rooms.booking.desc">Rezervujte přímo přes naše partnery a získejte nejlepší dostupnou cenu.</p>
+                    <div class="booking-links">
+                        <a href="https://www.booking.com/hotel/cz/airport-rooms.cs.html" target="_blank" class="booking-link-card">
+                            <div class="bl-logo" style="background:#003580">B</div>
+                            <div><strong>Booking.com</strong><span>Airport Rooms Praha</span></div>
+                            <div class="bl-price"><span data-i18n="cta.from">od</span> 2 258 Kč</div>
+                        </a>
+                        <a href="https://www.bluepillow.com" target="_blank" class="booking-link-card">
+                            <div class="bl-logo" style="background:#1a73e8">BP</div>
+                            <div><strong>Bluepillow.com</strong><span data-i18n="rooms.booking.compare">Porovnání cen</span></div>
+                            <div class="bl-price"><span data-i18n="cta.from">od</span> 2 245 Kč</div>
+                        </a>
+                    </div>
+                    <p class="text-sm text-muted" data-i18n="rooms.booking.note">* Ceny jsou orientační a mohou se lišit podle data a dostupnosti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg><span class="logo-text">Airport<span class="logo-accent">Rooms</span></span></a>
+                    <p data-i18n="footer.desc">Komfortní ubytování v Praze 6, blízko letiště Václava Havla.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.pages">Stránky</h4>
+                    <ul><li><a href="index.html" data-i18n="nav.home">Domů</a></li><li><a href="rooms.html" data-i18n="nav.rooms">Pokoje</a></li><li><a href="gallery.html" data-i18n="nav.gallery">Galerie</a></li><li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="nav.contact">Kontakt</h4>
+                    <p>Evropská 503/221<br>161 00 Praha 6 – Liboc</p>
+                    <p><a href="tel:+420777024000">+420 777 024 000</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Airport Rooms. <span data-i18n="footer.copy">Všechna práva vyhrazena.</span></p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Nahoru"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+    <script src="js/main.js"></script>
+</body>
+</html>
