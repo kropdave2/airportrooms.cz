@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie | Airport Rooms</title>
+    <meta name="description" content="Prohlédněte si fotografie penzionu Airport Rooms – pokoje, exteriér, okolí a sdílené prostory v Praze 6.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2L6 14h4v14h12V14h4L16 2z' fill='%231a56db'/></svg>">
+</head>
+<body data-page="gallery">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-transition" id="pageTransition"><span class="transition-label">Airport Rooms</span></div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg>
+                <span class="logo-text">Airport<span class="logo-accent">Rooms</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Domů</a></li>
+                <li><a href="rooms.html" class="nav-link" data-i18n="nav.rooms">Pokoje</a></li>
+                <li><a href="gallery.html" class="nav-link active" data-i18n="nav.gallery">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn" id="langBtn" aria-label="Language">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span id="currentLang">CZ</span>
+                        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="cs">Čeština</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="de">Deutsch</button>
+                        <button class="lang-option" data-lang="ru">Русский</button>
+                        <button class="lang-option" data-lang="it">Italiano</button>
+                        <button class="lang-option" data-lang="pl">Polski</button>
+                    </div>
+                </div>
+                <a href="rooms.html" class="nav-cta" data-i18n="nav.book">Rezervovat</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <span class="tag reveal-up" data-i18n="gallery.tag">Galerie</span>
+            <h1 class="title-xl reveal-up" style="--delay:.1s"><span data-i18n="gallery.title1">Nahlédněte do </span><span class="gradient-text">Airport Rooms</span></h1>
+            <p class="text-body-lg reveal-up" style="--delay:.2s" data-i18n="gallery.intro">Prohlédněte si, jak to u nás vypadá – pokoje, společné prostory, zahradu i okolí.</p>
+        </div>
+    </section>
+
+    <section class="section gallery-page">
+        <div class="container">
+            <div class="gallery-filters reveal-up">
+                <button class="filter-btn active" data-filter="all" data-i18n="gallery.all">Vše</button>
+                <button class="filter-btn" data-filter="rooms" data-i18n="nav.rooms">Pokoje</button>
+                <button class="filter-btn" data-filter="common" data-i18n="gallery.common">Koupelny & Kuchyně</button>
+                <button class="filter-btn" data-filter="exterior" data-i18n="gallery.exterior">Exteriér</button>
+            </div>
+
+            <div class="gallery-masonry" id="galleryGrid">
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/369130083.jpg" alt="Pokoj č. 1" loading="lazy">
+                    <div class="gal-overlay"><span>Pokoj č. 1 – Dvoulůžkový</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/369129986.jpg" alt="Pokoj č. 2" loading="lazy">
+                    <div class="gal-overlay"><span>Pokoj č. 2 – Dvoulůžkový</span></div>
+                </div>
+                <div class="gal-item gal-tall" data-category="rooms">
+                    <img src="images/369129710.jpg" alt="Detail pokoje" loading="lazy">
+                    <div class="gal-overlay"><span>Detail pokoje</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/373700872.jpg" alt="Pokoj č. 3" loading="lazy">
+                    <div class="gal-overlay"><span>Pokoj č. 3 – Jednolůžkový</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/369130121.jpg" alt="Ložnice detail" loading="lazy">
+                    <div class="gal-overlay"><span>Ložnice – detail</span></div>
+                </div>
+                <div class="gal-item gal-wide" data-category="common">
+                    <img src="images/357643271.jpg" alt="Kuchyně" loading="lazy">
+                    <div class="gal-overlay"><span>Plně vybavená sdílená kuchyně</span></div>
+                </div>
+                <div class="gal-item" data-category="common">
+                    <img src="images/357643341.jpg" alt="Kuchyně detail" loading="lazy">
+                    <div class="gal-overlay"><span>Kuchyně – vybavení</span></div>
+                </div>
+                <div class="gal-item gal-tall" data-category="common">
+                    <img src="images/357643172.jpg" alt="Koupelna s vanou" loading="lazy">
+                    <div class="gal-overlay"><span>Koupelna s vanou</span></div>
+                </div>
+                <div class="gal-item" data-category="common">
+                    <img src="images/357643186.jpg" alt="Koupelna umyvadla" loading="lazy">
+                    <div class="gal-overlay"><span>Koupelna – dvojitá umyvadla</span></div>
+                </div>
+                <div class="gal-item" data-category="common">
+                    <img src="images/357643157.jpg" alt="Koupelna detail" loading="lazy">
+                    <div class="gal-overlay"><span>Koupelna – detail</span></div>
+                </div>
+                <div class="gal-item" data-category="common">
+                    <img src="images/357643132.jpg" alt="Toaletní potřeby" loading="lazy">
+                    <div class="gal-overlay"><span>Toaletní potřeby</span></div>
+                </div>
+                <div class="gal-item gal-wide" data-category="exterior">
+                    <img src="images/365153275.jpg" alt="Exteriér penzionu" loading="lazy">
+                    <div class="gal-overlay"><span>Exteriér penzionu</span></div>
+                </div>
+                <div class="gal-item" data-category="exterior">
+                    <img src="images/365153231.jpg" alt="Vstup do penzionu" loading="lazy">
+                    <div class="gal-overlay"><span>Vstup – self check-in lockbox</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/375089223.jpg" alt="Pokoj interiér" loading="lazy">
+                    <div class="gal-overlay"><span>Interiér pokoje</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/380236581.jpg" alt="Pokoj detail" loading="lazy">
+                    <div class="gal-overlay"><span>Pokoj – vintage styl</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/380236670.jpg" alt="Pokoj nábytek" loading="lazy">
+                    <div class="gal-overlay"><span>Pokoj – nábytek</span></div>
+                </div>
+                <div class="gal-item" data-category="rooms">
+                    <img src="images/381126814.jpg" alt="Ložnice" loading="lazy">
+                    <div class="gal-overlay"><span>Ložnice</span></div>
+                </div>
+                <div class="gal-item gal-wide" data-category="rooms">
+                    <img src="images/381126965.jpg" alt="Pokoj panorama" loading="lazy">
+                    <div class="gal-overlay"><span>Pokoj – celkový pohled</span></div>
+                </div>
+                <div class="gal-item" data-category="exterior">
+                    <img src="images/476909966.jpg" alt="Okolí" loading="lazy">
+                    <div class="gal-overlay"><span>Okolí penzionu</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+        <button class="lb-prev" id="lbPrev"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button class="lb-next" id="lbNext"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        <img class="lb-img" id="lbImg" src="" alt="">
+        <div class="lb-caption" id="lbCaption"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg><span class="logo-text">Airport<span class="logo-accent">Rooms</span></span></a>
+                    <p data-i18n="footer.desc">Komfortní ubytování v Praze 6, blízko letiště Václava Havla.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.pages">Stránky</h4>
+                    <ul><li><a href="index.html" data-i18n="nav.home">Domů</a></li><li><a href="rooms.html" data-i18n="nav.rooms">Pokoje</a></li><li><a href="gallery.html" data-i18n="nav.gallery">Galerie</a></li><li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="nav.contact">Kontakt</h4>
+                    <p>Evropská 503/221<br>161 00 Praha 6 – Liboc</p>
+                    <p><a href="tel:+420777024000">+420 777 024 000</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Airport Rooms. <span data-i18n="footer.copy">Všechna práva vyhrazena.</span></p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Nahoru"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+    <script src="js/main.js"></script>
+</body>
+</html>
