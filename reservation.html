@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervace | Airport Rooms</title>
+    <meta name="description" content="Rezervujte si pokoj v Airport Rooms – penzion u letiště Praha. Jednoduchá online rezervace.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2L6 14h4v14h12V14h4L16 2z' fill='%231a56db'/></svg>">
+</head>
+<body data-page="reservation">
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="page-transition" id="pageTransition"><span class="transition-label">Airport Rooms</span></div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg>
+                <span class="logo-text">Airport<span class="logo-accent">Rooms</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Domů</a></li>
+                <li><a href="rooms.html" class="nav-link" data-i18n="nav.rooms">Pokoje</a></li>
+                <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Galerie</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn" id="langBtn" aria-label="Language">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span id="currentLang">CZ</span>
+                        <svg class="lang-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option active" data-lang="cs">Čeština</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="de">Deutsch</button>
+                        <button class="lang-option" data-lang="ru">Русский</button>
+                        <button class="lang-option" data-lang="it">Italiano</button>
+                        <button class="lang-option" data-lang="pl">Polski</button>
+                    </div>
+                </div>
+                <a href="reservation.html" class="nav-cta" data-i18n="nav.book">Rezervovat</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container">
+            <span class="tag reveal-up" data-i18n="res.tag">Rezervace</span>
+            <h1 class="title-xl reveal-up" style="--delay:.1s"><span data-i18n="res.title1">Rezervujte si </span><span class="gradient-text" data-i18n="res.title2">pokoj online</span></h1>
+            <p class="text-body-lg reveal-up" style="--delay:.2s" data-i18n="res.intro">Vyplňte formulář níže a my vám potvrdíme rezervaci e-mailem nebo telefonicky do 24 hodin.</p>
+        </div>
+    </section>
+
+    <section class="section reservation-page">
+        <div class="container">
+            <div class="reservation-grid">
+                <div class="form-wrap reservation-form-wrap">
+                    <h3 data-i18n="res.form.title">Rezervační formulář</h3>
+                    <form id="reservationForm" novalidate>
+                        <div class="fg">
+                            <select id="resRoom" required>
+                                <option value="" disabled selected data-i18n="res.form.selectroom">Vyberte pokoj</option>
+                                <option value="king-balcony" data-i18n="res.form.room1">Pokoj s manželskou postelí King a balkonem (2 os.)</option>
+                                <option value="double" data-i18n="res.form.room2">Dvoulůžkový pokoj s manželskou postelí (2 os.)</option>
+                                <option value="economy" data-i18n="res.form.room3">Dvoulůžkový pokoj Economy (1 os.)</option>
+                            </select>
+                            <label class="select-label" data-i18n="res.form.roomlabel">Pokoj</label>
+                        </div>
+                        <div class="form-2col">
+                            <div class="fg">
+                                <input type="date" id="resCheckin" required placeholder=" ">
+                                <label data-i18n="res.form.checkin">Datum příjezdu</label>
+                            </div>
+                            <div class="fg">
+                                <input type="date" id="resCheckout" required placeholder=" ">
+                                <label data-i18n="res.form.checkout">Datum odjezdu</label>
+                            </div>
+                        </div>
+                        <div class="form-2col">
+                            <div class="fg">
+                                <select id="resGuests" required>
+                                    <option value="1">1</option>
+                                    <option value="2" selected>2</option>
+                                </select>
+                                <label class="select-label" data-i18n="res.form.guests">Počet hostů</label>
+                            </div>
+                            <div class="fg">
+                                <input type="text" id="resName" required placeholder=" ">
+                                <label data-i18n="res.form.name">Jméno a příjmení</label>
+                            </div>
+                        </div>
+                        <div class="form-2col">
+                            <div class="fg">
+                                <input type="email" id="resEmail" required placeholder=" ">
+                                <label>E-mail</label>
+                            </div>
+                            <div class="fg">
+                                <input type="tel" id="resPhone" required placeholder=" ">
+                                <label data-i18n="res.form.phone">Telefon</label>
+                            </div>
+                        </div>
+                        <div class="fg">
+                            <textarea id="resNotes" rows="3" placeholder=" "></textarea>
+                            <label data-i18n="res.form.notes">Poznámky (nepovinné)</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" data-i18n="res.form.submit">Odeslat rezervaci</button>
+                    </form>
+                    <div class="form-success" id="resSuccess">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                        <h3 data-i18n="res.form.success.title">Rezervace odeslána!</h3>
+                        <p data-i18n="res.form.success.text">Děkujeme! Potvrzení obdržíte e-mailem do 24 hodin. V případě dotazů nás kontaktujte na +420 777 024 000.</p>
+                    </div>
+                </div>
+                <div class="reservation-info">
+                    <div class="res-info-card">
+                        <h4 data-i18n="res.info.title">Důležité informace</h4>
+                        <ul class="res-info-list">
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                                <div><strong>Check-in:</strong> <span data-i18n="res.info.checkin">Self check-in (lockbox) – kdykoliv</span></div>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                                <div><strong>Check-out:</strong> <span data-i18n="res.info.checkout">do 10:00</span></div>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div><strong data-i18n="contact.address">Adresa:</strong> Evropská 503/221, 161 00 Praha 6 – Liboc</div>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <div><strong data-i18n="contact.phone">Telefon:</strong> <a href="tel:+420777024000">+420 777 024 000</a></div>
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+                                <div><strong data-i18n="res.info.price">Ceny od:</strong> 1 800 – 2 100 Kč / noc</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="res-info-card">
+                        <h4 data-i18n="res.info.included">V ceně zahrnuto</h4>
+                        <ul class="res-included-list">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="res.info.i1">Vlastní koupelna s vanou</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="res.info.i2">Bezplatné Wi-Fi</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="res.info.i3">Bezplatné parkování</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="res.info.i4">Sdílená kuchyně</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="res.info.i5">Ložní prádlo a ručníky</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="res.info.i6">Topení</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo"><svg class="logo-svg" viewBox="0 0 36 36" fill="none"><path d="M18 3L4 15h5v16h18V15h5L18 3z" fill="currentColor"/><rect x="14" y="21" width="8" height="10" rx="1" fill="#fff" opacity=".3"/></svg><span class="logo-text">Airport<span class="logo-accent">Rooms</span></span></a>
+                    <p data-i18n="footer.desc">Komfortní ubytování v Praze 6, blízko letiště Václava Havla.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.pages">Stránky</h4>
+                    <ul><li><a href="index.html" data-i18n="nav.home">Domů</a></li><li><a href="rooms.html" data-i18n="nav.rooms">Pokoje</a></li><li><a href="gallery.html" data-i18n="nav.gallery">Galerie</a></li><li><a href="contact.html" data-i18n="nav.contact">Kontakt</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="nav.contact">Kontakt</h4>
+                    <p>Evropská 503/221<br>161 00 Praha 6 – Liboc</p>
+                    <p><a href="tel:+420777024000">+420 777 024 000</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Airport Rooms. <span data-i18n="footer.copy">Všechna práva vyhrazena.</span></p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Nahoru"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+    <script src="js/main.js"></script>
+</body>
+</html>
